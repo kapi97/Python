@@ -1,0 +1,549 @@
+print("Kalkulator")
+a = int(input("Podaj pierwsza liczbe: "))
+b = int(input("Podaj druga liczbe: "))
+c = int(input("Wybierz rodzaj dzialania: 1 - dodawanie, 2 - odejmowanie, 3 - mnozenie, 4 - dzielenie: "))
+if (c == 1):
+	wynik = a + b
+elif (c == 2):
+	wynik = a - b
+elif (c == 3):
+	wynik = a * b
+elif (c == 4):
+	wynik = a / b
+else:
+	print("Zly wybor!")
+
+print("Wynik: ", wynik)
+---------------------------------------
+print("Kalkulator")
+a = int(input("Podaj pierwsza liczbe: "))
+b = int(input("Podaj druga liczbe: "))
+c = input("Wybierz rodzaj dzialania: 1 - dodawanie, 2 - odejmowanie, 3 - mnozenie, 4 - dzielenie: ")
+if (c == '1'):
+	wynik = a + b
+elif (c == '2'):
+	wynik = a - b
+elif (c == '3'):
+	wynik = a * b
+elif (c == '4'):
+	wynik = a / b
+else:
+	print("Zly wybor!")
+
+print("Wynik: ", wynik)
+---------------------------------------
+import sys
+
+print("Kalkulator")
+a = int(input("Podaj pierwsza liczbe: "))
+b = int(input("Podaj druga liczbe: "))
+if (b == 0):
+	print("Nie dziel przez zero")
+	sys.exit()
+
+wynik = a / b
+c = input("Jesli chcesz otrzymac liczbe calkowita, wybierz 1, inaczej wybierz 2: ")
+
+if (c == '1'):
+	print(int(wynik))
+elif (c == '2'):
+	print(float(wynik))
+---------------------------------------
+import sys
+
+def dodawanie(a, b):
+	c = a + b
+	return c
+
+def odejmowanie(a, b):
+	c = a - b
+	return c
+
+def mnozenie(a, b):
+	c = a * b
+	return c
+
+def dzielenie(a, b):
+	c = a / b
+	return c
+
+def zlyWybor():
+	print("Dokonales zlego wyboru!")
+	sys.exit()
+
+a = int(input("Podaj pierwsza liczbe: "))
+b = int(input("Podaj druga liczbe: "))
+c = input("Wybierz rodzaj dzialania: 1 - dodawanie, 2 - odejmowanie, 3 - mnozenie, 4 - dzielenie: ")
+if (c == '1'):
+	wynik = dodawanie(a, b)
+elif (c == '2'):
+	wynik = odejmowanie(a, b)
+elif (c == '3'):
+	wynik = mnozenie(a, b)
+elif (c == '4'):
+	wynik = dzielenie(a, b)
+else:
+	zlyWybor()
+
+print("Wynik: ", wynik)
+---------------------------------------
+Zaawansowane operacje matematyczne
+
+import math
+
+a = math.pow(3, 2)
+print(a)
+
+b = math.sqrt(a)
+print(b)
+
+c = math.sin(30)
+print(c)
+
+print(math.pi)
+
+print(math.e)
+---------------------------------------
+I - kalkulator.py
+
+def dodaj(a, b):
+	return a + b
+
+def odejmij(a, b):
+	return a - b
+
+def pomnoz(a, b):
+	return a * b
+
+def podziel(a, b):
+	if (b == 0):
+		print ("Nie mozna dzielic przez zero!")
+		return 0
+	return a / b
+
+II - g³ówny program
+
+from kalkulator import *
+
+a = int(input("Podaj pierwsza liczbe: "))
+b = int(input("Podaj druga liczbe: "))
+wyborDzialania = int(input("Podaj rodzaj dzialania: \n1-dodawanie\n2-odejmowanie\n3-mnozenie\n4-dzielenie\n -> : "))
+
+if (wyborDzialania == 1):
+	print(dodaj(a, b))
+elif (wyborDzialania == 2):
+	print(odejmij(a, b))
+elif (wyborDzialania == 3):
+	print(pomnoz(a, b))
+elif (wyborDzialania == 1):
+	print(podziel(a, b))
+else:
+	print("Nie ma takiej opcji!")
+---------------------------------------
+class Kalkulator:
+
+	def __init__(self, a, b):
+		self.a = a
+		self.b = b
+
+	def dodawanie(self):
+		return self.a + self.b
+
+	def odejmowanie(self):
+		return self.a - self.b
+
+	def mnozenie(self):
+		return self.a * self.b
+
+	def dzielenie(self):
+		if self.b != 0:
+			return a / b
+		else:
+			print ("Nie wolno dzielic przez zero!")
+			return 0
+
+	def wyswietlWynik(self, wynik):
+		print (wynik)
+
+a = int(input("Podaj pierwsza liczbe: "))
+b = int(input("Podaj druga liczbe: "))
+kalkulator = Kalkulator(a, b)
+
+wybor = input("Wybierz rodzaj dzialania: \n1 - +\n2 - -\n3 - *\n4 - /\n -> :")
+
+if wybor == '1':
+	wynik = kalkulator.dodawanie()
+	kalkulator.wyswietlWynik(wynik)
+elif wybor == '2':
+	wynik = kalkulator.odejmowanie()
+	kalkulator.wyswietlWynik(wynik)
+elif wybor == '3':
+	wynik = kalkulator.mnozenie()
+	kalkulator.wyswietlWynik(wynik)
+elif wybor == '4':
+	wynik = kalkulator.dzielenie()
+	kalkulator.wyswietlWynik(wynik)
+else:
+	print ("Nie ma takiej opcji!")
+---------------------------------------
+class Kalkulator:
+
+	def __init__(self, a, b):
+		self.a = a
+		self.b = b
+
+	def __del__(self):
+		del self.a
+		del self.b
+
+	def dodawanie(self):
+		return self.a + self.b
+
+	def odejmowanie(self):
+		return self.a - self.b
+
+	def mnozenie(self):
+		return self.a * self.b
+
+	def dzielenie(self):
+		if self.b != 0:
+			return a / b
+		else:
+			print ("Nie wolno dzielic przez zero!")
+			return 0
+
+	def wyswietlWynik(self, wynik):
+		print (wynik)
+
+a = int(input("Podaj pierwsza liczbe: "))
+b = int(input("Podaj druga liczbe: "))
+kalkulator = Kalkulator(a, b)
+
+wybor = input("Wybierz rodzaj dzialania: \n1 - +\n2 - -\n3 - *\n4 - /\n -> :")
+
+if wybor == '1':
+	wynik = kalkulator.dodawanie()
+	kalkulator.wyswietlWynik(wynik)
+elif wybor == '2':
+	wynik = kalkulator.odejmowanie()
+	kalkulator.wyswietlWynik(wynik)
+elif wybor == '3':
+	wynik = kalkulator.mnozenie()
+	kalkulator.wyswietlWynik(wynik)
+elif wybor == '4':
+	wynik = kalkulator.dzielenie()
+	kalkulator.wyswietlWynik(wynik)
+else:
+	print ("Nie ma takiej opcji!")
+
+del kalkulator
+---------------------------------------
+Odgadywanie liczby
+
+szukanaLiczba = int(input("Podaj liczbe, ktora ma znalezc uzytkownik:"))
+strzal = 0
+while strzal != szukanaLiczba:
+	strzal = int(input("Odgadnij szukana liczbe:"))
+	if (strzal < szukanaLiczba):
+		print("Za mala!")
+		continue
+	elif (strzal > szukanaLiczba):
+		print("Za duza!")
+		continue
+	print("Ostatnie wykonanie petli.")
+print("Brawo, wygrales!")
+---------------------------------------
+print("Program dodajacy tylko liczby parzyste.")
+wynik = 0
+while wynik < 100:
+	liczba = int(input("Podaj kolejna liczbe dodatnia: "))
+	if (liczba < 0):
+		print("Liczba musi byc dodatnia!")
+		break;
+	if (liczba % 2 == 0):
+		wynik += liczba
+	else:
+		continue
+print(wynik)
+---------------------------------------
+Odtwarzanie dŸwiêku
+
+import winsound
+
+tytul = input("Podaj nazwe pliku do odtworzenia: ")
+
+winsound.PlaySound(tytul, winsound.SND_FILENAME)
+---------------------------------------
+Wysy³anie wiadomoœci e-mail
+
+import smtplib
+
+sender = 'adresnadawcy@domena.com'
+receivers = ['adresodbiorcy@domena.com']
+
+message = """From: From Nadawca <adresnadawcy@domena.com>
+To: To Odbiorca <adresodbiorcy@domena.com>
+Subject: Tytul e-maila
+
+Tresc e-maila
+"""
+
+try:
+	mail = smtplib.SMTP('localhost')
+	mail.sendmail(sender, receivers, message)
+	print ("E-mail wyslany!")
+except SMTPException:
+	print ("Error: Nie udalo sie wyslac e-maila!")
+---------------------------------------
+import re, smtplib
+from email.mime.text import MIMEText
+
+msg = MIMEText("Testowy email")
+msg['Subject'] = 'Mail from python'
+msg['From'] = "mgrzemow@gmail.com"
+msg['To'] = "mail1@gmail.com, mail2@gmail.com"
+
+s = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+s.ehlo()
+#s.starttls()
+s.login(login, haslo)
+s.send_message(msg)
+s.quit()
+---------------------------------------
+Aktualna data i czas
+
+import datetime
+
+teraz = datetime.datetime.now()
+print(teraz)
+print(teraz.ctime())
+
+miesiac = str(teraz.month)
+
+dzien = str(teraz.day)
+
+rok = str(teraz.year)
+
+godzina = str(teraz.hour)
+
+minuta = str(teraz.minute)
+
+sekunda = str(teraz.second)
+
+print (dzien + "." + miesiac + "." + rok + "." + godzina + "." + minuta + "." + sekunda)
+----------------------------------------
+Dostêp do systemu operacyjnego
+
+import os
+from os.path import join
+
+szukanyPlik = input("Podaj nazwe pliku, ktorego szukasz: ")
+sciezka = input("Podaj sciezke, gdzie chcesz szukac pliku: ")
+
+for root, dirs, files in os.walk(sciezka):
+	print ("Szukam:", root)
+	if szukanyPlik in files:
+		print ("PLIK ZNALEZIONY: %s" % join(root, szukanyPlik))
+		break
+---------------------------------------
+I
+plik = open("plik.txt", "w")
+plik.write("Pierwsze zdanie\n")
+plik.close()
+
+plik = open("plik.txt", "a")
+plik.write("Drugie zdanie\n")
+plik.close()
+
+plik = open("plik.txt", "r")
+zawartosc = plik.read()
+plik.close()
+
+II
+plik = open("plik.txt", "w")
+plik.write("Ala ma kota.")
+plik.close()
+
+plik = open("plik.txt", "r+")
+zawartosc = plik.read()
+print(zawartosc)
+
+nowaZawartosc = zawartosc.replace("kota","psa")
+print(nowaZawartosc)
+plik.write(nowaZawartosc)
+plik.close()
+---------------------------------------
+I - biblioteka tkinter
+import tkinter
+
+okno = tkinter.Tk()
+etykietaWitaj = tkinter.Label(okno, text="Witaj!")
+przyciskZamknij = tkinter.Button(okno, text='Zamknij', command=okno.destroy)
+etykietaWitaj.pack()
+przyciskZamknij.pack()
+okno.mainloop()
+
+II - dodatkowe elementy
+from tkinter import *
+
+def dodaj():
+	print(int(poleA.get()) + int(poleB.get()))
+	poleA.delete(0,END)
+	poleB.delete(0,END)
+
+okno = Tk()
+Label(okno, text="Liczba nr 1: ").grid(row=0)
+Label(okno, text="Liczba nr 2: ").grid(row=1)
+
+poleA = Entry(okno)
+poleB = Entry(okno)
+
+poleA.grid(row=0, column=1)
+poleB.grid(row=1, column=1)
+
+przyciskDodaj = Button(okno, text='Dodaj', command=dodaj)
+przyciskDodaj.grid(row=3, column=0, sticky=W, pady=4)
+przyciskWyjdz = Button(okno, text='Wyjdz', command=okno.destroy)
+---------------------------------------
+I - dane goœci
+
+from serializacja import *
+
+print("Witaj w programie do obslugi gosci hotelowych.")
+wybor = -1
+
+while(wybor != 0):
+	wybor = int(input("\nWybierz opcje:\n1-dodaj nowego goscia\n2-usun goscia\n3-znajdz goscia\n0-zakoncz dzialanie programu\n -> : ")
+
+	if (wybor == 1):
+		dodajGoscia()
+	elif (wybor == 2):
+		nazwisko = input("\nPodaj nazwisko usuwanego goscia: ")
+		usunGoscia(nazwisko)
+	elif (wybor == 3):
+		nazwisko = input("\nPodaj nazwisko szukanego goœcia: ")
+		szukajGoscia(nazwisko)
+	elif (wybor < 0 or wybor > 3):
+		print("Nie ma takiej opcji!")
+
+print("\nDziekuje za skorzystanie z mojego programu!")
+
+II - serializacja.py
+
+import pickle
+import os
+
+def zapiszDane(daneGosci):
+	with open("daneGosci", "wb") as plik:
+		pickle.dump(daneGosci, plik)
+
+def odczytajDane():
+	daneGosci = {}
+	statinfo = os.stat("daneGosci")
+	if (statinfo.st_size == 0):
+		return daneGosci
+	try:
+		with open("daneGosci", "rb") as plik:
+			daneGosci = pickle.load(plik)
+	except EOFError:
+		print("Plik jest pusty!")
+	return daneGosci
+
+def dodajGoscia():
+	daneGosci = {}
+	nazwisko = input("Podaj nazwisko goscia: ")
+	if (szukajGoscia(nazwisko) == 1):
+		print("\nNie mozna dodac goscia! Istnieje juz gosc o takim nazwisku.")
+		return 1
+	imie = input("\nPodaj imie goscia: ")
+	adres = input("Podaj adres goscia: ")
+	telefon = input("Podaj telefon goscia: ")
+	daneGosci = odczytajDane()
+	daneGoscia = [imie, nazwisko, adres, telefon]
+	daneGosci.update({daneGoscia[0] : daneGoscia})
+	zapiszDane(daneGosci)
+	daneGoscia = []
+
+def szukajGoscia(nazwisko):
+	daneGosci = {}
+	daneGosci = odczytajDane()
+	print("szukajGoscia", daneGosci)
+	if (daneGosci.get(nazwisko, 0) != 0):
+		print(daneGosci[nazwisko])
+		return 1
+	else:
+		print("\nNie znaleziono goscia o takim nazwisku!")
+		return 0
+
+def usunGoscia(nazwisko):
+	daneGosci = {}
+	daneGosci = odczytajDane()
+	del daneGosci[nazwisko]
+	zapiszDane(daneGosci)
+---------------------------------------
+import pickle
+
+print("Witaj w programie zapisujacym dane gosci hotelowych.")
+
+daneGoscia = []
+daneGosci = {}
+
+daneGoscia.append(input("\nPodaj imie: "))
+daneGoscia.append(input("\nPodaj nazwisko: "))
+daneGoscia.append(input("\nPodaj adres: "))
+daneGosci = {0 : daneGoscia}
+
+print(daneGosci)
+
+with open("plik.binarny", "wb") as plik1:
+	pickle.dump(daneGosci, plik1)
+
+with open("plik.binarny", "rb") as plik2:
+	kopiaSlownika = pickle.load(plik2)
+
+print(kopiaSlownika)
+
+lub
+
+import pickle
+
+print("Witaj w programie zapisujacym dane gosci hotelowych.")
+
+daneGoscia = []
+daneGosci = {}
+
+for i in range(5):
+	daneGoscia.append(i)
+	daneGoscia.append(input("\nPodaj imie: "))
+	nazwisko = (input("\nPodaj nazwisko: "))
+	daneGoscia.append(input("\nPodaj adres: "))
+	daneGosci.update({nazwisko : daneGoscia})
+	daneGoscia = []
+
+with open("plik.binarny", "wb") as plik1:
+	pickle.dump(daneGosci, plik1)
+
+with open("plik.binarny", "rb") as plik2:
+	kopiaSlownika = pickle.load(plik2)
+
+print(kopiaSlownika)
+----------------------------------------
+Generowanie losowych danych
+
+import random
+
+a = random.randrange(1, 100, 1)
+print(a)
+
+b = random.random()
+print(b)
+
+c = random.choice("abcdefghij")
+print(c)
+
+d = random.uniform(1, 100)
+print(d)
+
+lista = ["a", "b", "c", "d", "e"]
+f = random.shuffle(lista)
+print(f)
